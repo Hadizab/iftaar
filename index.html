@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramadan Iftaar Ideas · PDF download</title>
+
+<!-- Fonts & styles -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- html2pdf (for client‑side PDF generation) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<style>
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #fafafa;
+    color: #111;
+    line-height: 1.7;
+}
+
+/* ===== HEADER ===== */
+header {
+    position: relative;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.header-bg {
+    position: absolute;
+    inset: 0;
+    background: url('https://cdn.pixabay.com/photo/2017/02/24/11/05/salad-bar-2094459_1280.jpg') center/cover no-repeat;
+    filter: brightness(0.6);
+}
+
+header h1 {
+    position: relative;
+    z-index: 2;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    letter-spacing: 3px;
+    color: #fff;
+}
+
+/* ===== MAIN ===== */
+main {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 80px;
+}
+
+section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    margin-bottom: 30px;
+    position: relative;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #b32e2e;
+    margin-top: 12px;
+}
+
+/* ===== IMAGES ===== */
+.landscape-img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ===== LIST ===== */
+.ramadan-list {
+    list-style: decimal;
+    padding-left: 1.5rem;
+    font-size: 1.15rem;
+}
+
+.ramadan-list li {
+    margin-bottom: 12px;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.about-container img {
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.about-text {
+    flex: 1;
+    min-width: 260px;
+}
+
+/* ===== VIDEO ===== */
+.video-container {
+    margin-top: 40px;
+}
+
+video {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ===== DOWNLOAD BUTTON ===== */
+.download-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.download-btn {
+    background-color: #b32e2e;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    padding: 12px 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 14px rgba(179, 46, 46, 0.3);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.download-btn:hover {
+    background-color: #942525;
+    transform: scale(1.02);
+}
+
+.download-btn:active {
+    transform: scale(0.98);
+}
+
+.download-btn i {
+    font-size: 1.2rem;
+    font-style: normal;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.95rem;
+    color: #555;
+    border-top: 1px solid #eee;
+    margin-top: 60px;
+}
+
+/* ===== HOVER EFFECT ===== */
+section h2 {
+    transition: color 0.3s ease;
+}
+
+section h2:hover {
+    color: #b32e2e;
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 768px) {
+    header {
+        height: 260px;
+    }
+
+    main {
+        margin: 50px auto;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-container img {
+        width: 100%;
+    }
+    
+    .download-wrapper {
+        justify-content: center;
+    }
+}
+
+/* ===== PDF STYLES - These apply when generating PDF ===== */
+@media print {
+    .download-wrapper, video, .video-container {
+        display: none !important;
+    }
+    
+    body { 
+        background: white; 
+        padding: 20px;
+    }
+    
+    header { 
+        height: auto; 
+        min-height: 200px; 
+        margin-bottom: 30px;
+    }
+    
+    .header-bg { 
+        filter: brightness(0.7);
+    }
+    
+    section {
+        page-break-inside: avoid;
+        margin-bottom: 40px;
+    }
+    
+    .landscape-img {
+        max-height: 300px;
+        object-fit: cover;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-bg"></div>
+    <h1>Ramadan Iftaar Ideas</h1>
+</header>
+
+<main>
+    <!-- DOWNLOAD BUTTON (outside the PDF capture area) -->
+    <div class="download-wrapper">
+        <button class="download-btn" id="downloadPdfBtn">
+            <i>📄</i> Download as PDF
+        </button>
+    </div>
+
+    <!-- This div contains everything we want in the PDF -->
+    <div id="pdf-content">
+        <section>
+            <h2>Day One</h2>
+            <img src="https://cdn.pixabay.com/photo/2015/10/01/14/26/fried-rice-967081_1280.jpg" class="landscape-img" alt="Fried rice dish">
+            <ol class="ramadan-list">
+                <li>Fried rice and peppered chicken</li>
+                <li>Fruit salad & dates</li>
+                <li>Fried plantains and scrambled eggs</li>
+                <li>Kunun Stamiya</li>
+                <li>Zobo</li>
+                <li>Kosai</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Day Two</h2>
+            <img src="https://cdn.pixabay.com/photo/2016/07/31/18/00/chicken-1559579_1280.jpg" class="landscape-img" alt="Beef stew">
+            <ol class="ramadan-list">
+                <li>White rice and beef stew</li>
+                <li>Peppered chicken wings</li>
+                <li>Fruit salad & dates</li>
+                <li>Fried plantains and scrambled eggs</li>
+                <li>Akamu</li>
+                <li>Zobo</li>
+                <li>Fura da Nono</li>
+                <li>Kosai</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Day Three</h2>
+            <img src="https://cdn.pixabay.com/photo/2016/10/23/09/37/fried-rice-1762493_1280.jpg" class="landscape-img" alt="Chinese fried rice">
+            <ol class="ramadan-list">
+                <li>Chinese fried rice and peppered chicken</li>
+                <li>Samosa and spring rolls</li>
+                <li>Fruit salad & dates</li>
+                <li>Fried plantains and scrambled eggs</li>
+                <li>Akamu</li>
+                <li>Chapman</li>
+                <li>Yogurt parfait</li>
+                <li>Kosai</li>
+            </ol>
+        </section>
+
+<section>
+ <h2>Day Four</h2>
+ <img src="https://cdn.pixabay.com/photo/2026/02/21/17/39/hadizaba-puffpuff-10136610_1280.jpg" class="landscape-img">
+ <ol class="ramadan-list">
+     <li>Jollof Rice</li>
+     <li>Peppered Chicken</li>
+     <li>Golden Yam</li>
+     <li>Puff Puff</li>
+     <li>Parfait</li>
+     <li>Fresh Fruits</li>
+     <li>Pap</li>
+     <li>Chocolate Chip Cookies</li>
+ </ol>
+</section>
+
+<section>
+ <h2>Day Five</h2>
+ <img src="https://cdn.pixabay.com/photo/2014/07/11/19/55/strawberry-390238_1280.jpg" class="landscape-img">
+ <ol class="ramadan-list">
+     <li>Peter cinkafa</li>
+     <li>Sandwiches</li>
+     <li>Strawberry lemonade</li>
+     <li>Fried Plantains, chips, kosai and scrambled eggs</li>
+     <li>Peppered chicken</li>
+     <li>Cow tail peppersoup</li>
+     <li>Fruits</li>
+ </ol>
+</section>
+
+<section>
+ <h2>Day Six</h2>
+ <img src="https://cdn.pixabay.com/photo/2025/02/04/13/06/ai-generated-9381924_1280.jpg" class="landscape-img">
+ <ol class="ramadan-list">
+     <li>Pap</li>
+     <li>Zobo</li>
+     <li>Fried Plantains and scrambled eggs</li>
+     <li>Fura da Nono</li>
+     <li>Jollof rice with yakuwa</li>
+     <li>Chicken peppersoup</li>
+     <li>Puff Puff</li>
+     <li>Fruits</li>
+ </ol>
+</section>
+
+
+        <section>
+            <h2>About Ramadan</h2>
+            <div class="about-container">
+                <img src="https://cdn.pixabay.com/photo/2020/03/01/06/21/sweets-4891803_1280.jpg" alt="Ramadan sweets">
+                <div class="about-text">
+                    <p>
+                        Ramadan is the ninth month of the Islamic calendar, observed worldwide as a month of fasting, prayer, reflection, and community. It commemorates the first revelation of the Qur'an and emphasizes spiritual growth, gratitude, and generosity.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    © <span id="year"></span> Hadiza Bagudu. All rights reserved.
+</footer>
+
+<script>
+// update copyright year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// PDF download logic using html2pdf
+const downloadBtn = document.getElementById('downloadPdfBtn');
+
+downloadBtn.addEventListener('click', function () {
+    // Show loading state
+    const originalText = downloadBtn.innerHTML;
+    downloadBtn.innerHTML = '<i>⏳</i> Generating PDF...';
+    downloadBtn.disabled = true;
+    
+    // Get the content we want in PDF
+    const element = document.getElementById('pdf-content');
+    
+    // Configuration for better PDF output
+    const opt = {
+        margin:        0.5,
+        filename:      'ramadan-iftar-ideas.pdf',
+        image:         { type: 'jpeg', quality: 0.98 },
+        html2canvas:   { 
+            scale: 2, 
+            letterRendering: true,
+            useCORS: true,           // Enable CORS for images
+            logging: false,
+            allowTaint: false,
+            backgroundColor: '#ffffff'
+        },
+        jsPDF:         { unit: 'in', format: 'a4', orientation: 'portrait' },
+        pagebreak:     { mode: ['css', 'legacy'] }
+    };
+
+    // Generate PDF directly from the element
+    html2pdf().set(opt).from(element).save()
+        .then(() => {
+            // Restore button
+            downloadBtn.innerHTML = originalText;
+            downloadBtn.disabled = false;
+        })
+        .catch(error => {
+            console.error('PDF generation error:', error);
+            alert('PDF generation failed. Please try again.');
+            downloadBtn.innerHTML = originalText;
+            downloadBtn.disabled = false;
+        });
+});
+
+// Also add a small fix for images - preload them to ensure CORS works
+window.addEventListener('load', function() {
+    // Preload images to help with CORS
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        if (img.src && img.src.startsWith('https://cdn.pixabay.com')) {
+            // This helps with CORS by forcing a re-fetch with anonymous mode
+            img.crossOrigin = 'anonymous';
+        }
+    });
+});
+</script>
+
+<!-- Add a small style to ensure images are loaded with CORS -->
+<style>
+/* Ensure images can be captured by canvas */
+img {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+</style>
+
+</body>
+</html>
